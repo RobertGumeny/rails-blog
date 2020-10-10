@@ -1,2 +1,12 @@
-<h2><%= @post.title %></h2>
-<p><%= @post.body %></p>
+<div class="row">
+  <div class="col-4 mx-auto pt-5">
+    <h2><%= @post.title %></h2>
+    <p><%= @post.body %></p>
+    <hr>
+    <%= link_to "Edit", edit_post_path(@post), :class => 'btn btn-warning' %>
+    <%= link_to "Delete", post_path(@post),
+        method: :delete,
+        data: { confirm: 'Are you sure?' },
+        :class => 'btn btn-danger' %>
+  </div>
+</div>
